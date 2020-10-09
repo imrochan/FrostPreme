@@ -1,0 +1,322 @@
+<!doctype html>
+<style>
+.textformat {
+  font-family: "Courier New", Courier, monospace;
+}
+.input {
+  padding: 5px;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid black;
+  color: black;
+  width: 20%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+}
+.checkbox {
+  padding: 5px;
+  display: inline-block;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+}
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.dropdown {
+  padding:5px;
+  display:inline-block;
+  border:none;
+  border-bottom:1px solid black;
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  font-size: 18px;
+  font-family:"Courier New", Courier, monospace;
+  text-align-last:center;
+  background-color: rgb(243, 243, 243);
+  color: black;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(243, 243, 243);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px black;
+  padding: 12px 16px;
+  z-index: 1;
+  display: block;
+  color: black;
+}
+.hidden{
+  display:none!important;
+}
+</style>
+<html style="background-color:rgb(243, 243, 243);">
+  <head>
+    <title>FrostPreme</title>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body class="textformat">
+  <center>
+    <br>
+    <br>
+    <img src="frostpreme.png" style="height:85px;">
+    <br>
+    <h1>HYBRID</h1>
+    <br>
+    <br>
+    <button class="button" id="startTask">Start Task</button>
+    <button class="button" id="stopTask">Stop</button>
+    <br>
+    <br>
+    <h2 id="taskMessage" style="color: green;">Welcome to FrostPreme v.1.0!</h2>
+     <h5> Built by Salty#7355 <h5>
+    <br>
+    <h2>Product Information</h2>
+    <input class="input" id="keywords" placeholder="Keywords">
+    <br>
+    <br>
+    <input class="input" id="style" placeholder="Style">
+    <select class="dropdown" id="size">
+      <option id="sizedefault" selected="true" class="dropdown-content" disabled>Size</option>
+      <option id="sN/A" class="dropdown-content">N/A</option>
+      <option id="sRandom" class="dropdown-content">Random</option>
+      <option id="sSmallest" class="dropdown-content">Smallest</option>
+      <option id="sLargest" class="dropdown-content">Largest</option>
+      <option class="dropdown-content" style="color: red;" disabled>General</option>
+      <option id="sSmall" class="dropdown-content">Small</option>
+      <option id="sMedium" class="dropdown-content">Medium</option>
+      <option id="sLarge" class="dropdown-content">Large</option>
+      <option id="sXLarge" class="dropdown-content">XLarge</option>
+      <option class="dropdown-content" style="color: red;" disabled>Pants</option>
+      <option id="s30" class="dropdown-content">30</option>
+      <option id="s32" class="dropdown-content">32</option>
+      <option id="s34" class="dropdown-content">34</option>
+      <option id="s36" class="dropdown-content">36</option>
+      <option class="dropdown-content" style="color: red;" disabled>Trucks</option>
+      <option id="s129" class="dropdown-content">129</option>
+      <option id="s139" class="dropdown-content">139</option>
+      <option id="s149" class="dropdown-content">149</option>
+      <option class="dropdown-content" style="color: red;" disabled>Shoes</option>
+      <option id="s4.5" class="dropdown-content">4.5</option>
+      <option id="s5" class="dropdown-content">5</option>
+      <option id="s5.5" class="dropdown-content">5.5</option>
+      <option id="s6" class="dropdown-content">6</option>
+      <option id="s6.5" class="dropdown-content">6.5</option>
+      <option id="s7" class="dropdown-content">7</option>
+      <option id="s7.5" class="dropdown-content">7.5</option>
+      <option id="s8" class="dropdown-content">8</option>
+      <option id="s8.5" class="dropdown-content">8.5</option>
+      <option id="s9" class="dropdown-content">9</option>
+      <option id="s9.5" class="dropdown-content">9.5</option>
+      <option id="s10" class="dropdown-content">10</option>
+      <option id="s10.5" class="dropdown-content">10.5</option>
+      <option id="s11" class="dropdown-content">11</option>
+      <option id="s11.5" class="dropdown-content">11.5</option>
+      <option id="s12" class="dropdown-content">12</option>
+      <option id="s12.5" class="dropdown-content">12.5</option>
+      <option id="s13" class="dropdown-content">13</option>
+      <option id="s13.5" class="dropdown-content">13.5</option>
+      <option id="s14" class="dropdown-content">14</option>
+      <option id="s14.5" class="dropdown-content">14.5</option>
+      <option id="s15" class="dropdown-content">15</option>
+      <option id="s15.5" class="dropdown-content">15.5</option>
+      <option id="s16" class="dropdown-content">16</option>
+      <option id="s16.5" class="dropdown-content">16.5</option>
+    </select>
+    <br>
+    <br>
+    <select class="dropdown" id="category">
+      <option id="categorydefault" selected="true" class="dropdown-content" disabled>Category</option>
+      <option id="Bags" class="dropdown-content">Bags</option>
+      <option id="Accessories" class="dropdown-content">Accessories</option>
+      <option id="Skate" class="dropdown-content">Skate</option>
+      <option id="Pants" class="dropdown-content">Pants</option>
+      <option id="Shoes" class="dropdown-content">Shoes</option>
+      <option id="Hats" class="dropdown-content">Hats</option>
+      <option id="Jackets" class="dropdown-content">Jackets</option>
+      <option id="Shirts" class="dropdown-content">Shirts</option>
+      <option id="Sweatshirts" class="dropdown-content">Sweatshirts</option>
+      <option id="Tops/Sweaters" class="dropdown-content">Tops/Sweaters</option>
+      <option id="Shorts" class="dropdown-content">Shorts</option>
+      <option id="T-Shirts" class="dropdown-content">T-Shirts</option>
+      <option id="New" class="dropdown-content">New</option>
+    </select>
+    <select class="dropdown" id="quantity">
+      <option id="quantitydefault" selected="true" class="dropdown-content" disabled>Quantity</option>
+      <option id="qN/A" class="dropdown-content">N/A</option>
+      <option id="q1" class="dropdown-content">1</option>
+      <option id="q2" class="dropdown-content">2</option>
+      <option id="q3" class="dropdown-content">3</option>
+      <option id="q4" class="dropdown-content">4</option>
+      <option id="q5" class="dropdown-content">5</option>
+      <option id="q6" class="dropdown-content">6</option>
+      <option id="q7" class="dropdown-content">7</option>
+      <option id="q8" class="dropdown-content">8</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <h2>Task Settings</h2>
+    <input class="input" id="monitordelay" placeholder="Monitor Delay">
+    <input class="input" id="delay" placeholder="Checkout Delay">
+    <br>
+    <br>
+    <br>
+    <input type="checkbox" id="timeron" class="checkbox">
+    <label for="timeron" class="checkbox">Enable Timer</label>
+    <br>
+    <br>
+    <div id="timerdiv" class="hidden">
+      <input id="tmonth" class="input" style="width: 30px;" placeholder="MM">
+      <input id="tday" class="input" style="width: 30px;" placeholder="DD">
+      <input id="tyear" class="input" style="width: 55px;" placeholder="2020" value="2020" disabled>
+      <input id="thour" class="input" style="width: 30px;" placeholder="HH">
+      <input id="tmin" class="input" style="width: 30px;" placeholder="MIN">
+      <input id="tsec" class="input" style="width: 30px;" placeholder="SEC">
+      <br>
+      <h3 id="showmonth" style="display: inline-block;">MONTH /</h3>
+      <h3 id="showday" style="display: inline-block;">DAY /</h3>
+      <h3 id="showyear" style="display: inline-block;">YEAR /</h3>
+      <h3 id="showhour" style="display: inline-block;">HOUR /</h3>
+      <h3 id="showminute" style="display: inline-block;">MIN /</h3>
+      <h3 id="showsecond" style="display: inline-block;">SEC</h3>
+    </div>
+    <br>
+    <h2>Contact Information</h2>
+    <input class="input" id="name" placeholder="Name">
+    <input class="input" id="email" placeholder="Email">
+    <input class="input" id="tel" placeholder="Telephone">
+    <br>
+    <br>
+    <input class="input" id="address" placeholder="Address">
+    <input class="input" id="apt" placeholder="Apt">
+    <input class="input" id="city" placeholder="City">
+    <br>
+    <br>
+    <select class="dropdown" id="state">
+      <option id="statedefault" selected="true" class="dropdown-content" disabled>State</option>
+      <option id="AL" class="dropdown-content">AL</option>
+      <option id="AK" class="dropdown-content">AK</option>
+      <option id="AS" class="dropdown-content">AS</option>
+      <option id="AZ" class="dropdown-content">AZ</option>
+      <option id="AR" class="dropdown-content">AR</option>
+      <option id="CA" class="dropdown-content">CA</option>
+      <option id="CO" class="dropdown-content">CO</option>
+      <option id="CT" class="dropdown-content">CT</option>
+      <option id="DE" class="dropdown-content">DE</option>
+      <option id="DC" class="dropdown-content">DC</option>
+      <option id="FM" class="dropdown-content">FM</option>
+      <option id="FL" class="dropdown-content">FL</option>
+      <option id="GA" class="dropdown-content">GA</option>
+      <option id="GU" class="dropdown-content">GU</option>
+      <option id="HI" class="dropdown-content">HI</option>
+      <option id="ID" class="dropdown-content">ID</option>
+      <option id="IL" class="dropdown-content">IL</option>
+      <option id="IN" class="dropdown-content">IN</option>
+      <option id="IA" class="dropdown-content">IA</option>
+      <option id="KS" class="dropdown-content">KS</option>
+      <option id="KY" class="dropdown-content">KY</option>
+      <option id="LA" class="dropdown-content">LA</option>
+      <option id="ME" class="dropdown-content">ME</option>
+      <option id="MH" class="dropdown-content">MH</option>
+      <option id="MD" class="dropdown-content">MD</option>
+      <option id="MA" class="dropdown-content">MA</option>
+      <option id="MI" class="dropdown-content">MI</option>
+      <option id="MN" class="dropdown-content">MN</option>
+      <option id="MS" class="dropdown-content">MS</option>
+      <option id="MO" class="dropdown-content">MO</option>
+      <option id="MT" class="dropdown-content">MT</option>
+      <option id="NE" class="dropdown-content">NE</option>
+      <option id="NV" class="dropdown-content">NV</option>
+      <option id="NH" class="dropdown-content">NH</option>
+      <option id="NJ" class="dropdown-content">NJ</option>
+      <option id="NM" class="dropdown-content">NM</option>
+      <option id="NY" class="dropdown-content">NY</option>
+      <option id="NC" class="dropdown-content">NC</option>
+      <option id="ND" class="dropdown-content">ND</option>
+      <option id="MP" class="dropdown-content">MP</option>
+      <option id="OH" class="dropdown-content">OH</option>
+      <option id="OK" class="dropdown-content">OK</option>
+      <option id="OR" class="dropdown-content">OR</option>
+      <option id="PW" class="dropdown-content">PW</option>
+      <option id="PA" class="dropdown-content">PA</option>
+      <option id="PR" class="dropdown-content">PR</option>
+      <option id="RI" class="dropdown-content">RI</option>
+      <option id="SC" class="dropdown-content">SC</option>
+      <option id="SD" class="dropdown-content">SD</option>
+      <option id="TN" class="dropdown-content">TN</option>
+      <option id="TX" class="dropdown-content">TX</option>
+      <option id="UT" class="dropdown-content">UT</option>
+      <option id="VT" class="dropdown-content">VT</option>
+      <option id="VI" class="dropdown-content">VI</option>
+      <option id="VA" class="dropdown-content">VA</option>
+      <option id="WA" class="dropdown-content">WA</option>
+      <option id="WV" class="dropdown-content">WV</option>
+      <option id="WI" class="dropdown-content">WI</option>
+      <option id="WY" class="dropdown-content">WY</option>
+    </select>
+    <input class="input" id="zip" placeholder="Zip">
+    <br>
+    <br>
+    <br>
+    <h2>Payment Information</h2>
+    <input class="input" id="cardnum" placeholder="Card Number">
+    <br>
+    <br>
+    <select class="dropdown" id="cardmonth">
+      <option id="monthdefault" selected="true" class="dropdown-content" disabled>Exp Month</option>
+      <option id="01" class="dropdown-content">01</option>
+      <option id="02" class="dropdown-content">02</option>
+      <option id="03" class="dropdown-content">03</option>
+      <option id="04" class="dropdown-content">04</option>
+      <option id="05" class="dropdown-content">05</option>
+      <option id="06" class="dropdown-content">06</option>
+      <option id="07" class="dropdown-content">07</option>
+      <option id="08" class="dropdown-content">08</option>
+      <option id="09" class="dropdown-content">09</option>
+      <option id="10" class="dropdown-content">10</option>
+      <option id="11" class="dropdown-content">11</option>
+      <option id="12" class="dropdown-content">12</option>
+    </select>
+    <select class="dropdown" id="cardyear">
+      <option id="yeardefault" selected="true" class="dropdown-content" disabled>Exp Year</option>
+      <option id="2020" class="dropdown-content">2020</option>
+      <option id="2021" class="dropdown-content">2021</option>
+      <option id="2022" class="dropdown-content">2022</option>
+      <option id="2023" class="dropdown-content">2023</option>
+      <option id="2024" class="dropdown-content">2024</option>
+      <option id="2025" class="dropdown-content">2025</option>
+      <option id="2026" class="dropdown-content">2026</option>
+      <option id="2027" class="dropdown-content">2027</option>
+      <option id="2028" class="dropdown-content">2028</option>
+      <option id="2029" class="dropdown-content">2029</option>
+      <option id="2030" class="dropdown-content">2030</option>
+    </select>
+    <input class="input" id="cvv" placeholder="CVV">
+    <br>
+    <br>
+    <br>
+    <button class="button" id="saveData">Save Info</button>
+    <button class="button" id="clearData">Clear</button>
+    <br>
+  </center>
+  </body>
+</html>

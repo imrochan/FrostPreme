@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "FrostPreme Hybrid V1",
+    "description": "The Greatest.",
+    "version": "1.0.0",
+    "browser_action": {
+        "default_icon": "icon.png"
+        
+    },
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png" 
+    },
+    "permissions": [
+        "tabs",
+        "<all_urls>",
+        "storage",
+        "cookies",
+        "identity"
+    ],
+
+
+    "content_scripts": [
+        {
+          "matches": ["https://www.supremenewyork.com/*"], 
+          "css" : ["noimages.css"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js", "oauth2.js"],
+        "persistent": true
+    }
+}
